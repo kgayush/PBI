@@ -3,7 +3,7 @@
 {% block body %}
 
 {% if message %}
-    {{ message }}
+    <h3 class="message">{{ message }}</h3>
 {% endif %}
     <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
