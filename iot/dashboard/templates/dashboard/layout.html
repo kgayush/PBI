@@ -2,6 +2,60 @@
 <html lang="en">
     <head>
         <title>Dashboard</title>
+        <style>
+
+            body{
+                background-color: #202124;
+            }
+            form{
+                border: 1px solid #f1f1f1;
+                margin-left: 30%;
+                margin-right: 30%;
+                padding: 10px;;
+                margin-top: 10%;
+            
+            }
+
+            body form{
+                background-color: rgb(255, 254, 245);
+                border-radius: 20px;
+                padding: 15px;
+            }
+
+            input[type=text], input[type=password] {
+                font-family: Arial, Helvetica, sans-serif;
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid rgb(56, 54, 54);
+                box-sizing: border-box;
+                border-radius: 10px;
+            }
+
+            button {
+                background-color: rgb(71, 67, 67);
+                color: white;
+                padding: 10px;
+                margin: 8px;
+                border: none;
+                cursor: pointer;
+                width: 50%;
+                text-align: center;
+                border-radius: 10px;
+                margin-left: 25%;
+            }
+
+            button:hover {
+                background-color: rgb(50, 61, 70); 
+            }
+
+            b {
+                font-family: sans-serif,Arial, Helvetica;
+                color: rgb(51, 47, 47);
+            }
+            
+        </style>
     </head>
     <body>
         {% block body %}
