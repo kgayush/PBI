@@ -2,13 +2,16 @@ from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
+from .models import Data
 
 # Create your views here.
 
 def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("login"))
-    return render(request, "dashboard/dashboard.html")
+    return render(request, "dashboard/dashboard.html",{
+        "datas": Data.objects.all()
+    })
 
 def login_view(request):
     if request.method == "POST":

@@ -11,29 +11,28 @@
     </div>
     <br></br>
 
-    <div class="table">
+    <div class="heading">
         <h2>Dashboard</h2>
     </div>
-    <table id="table">
+
+    <table>
         <tr>
-            <th>Company</th>
-            <th>Contact</th>
-            <th>Country</th>
+            <th>Floor</th>
+            <th>Room No</th>
+            <th>Appliance</th>
+            <th>Status</th>
         </tr>
 
-        <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
-          </tr>
-          <tr>
-            <td>Berglunds snabbköp</td>
-            <td>Christina Berglund</td>
-            <td>Sweden</td>
-          </tr>
-            
-            
-        </table>
+        {% for data in datas %}
+            <tr>
+                <td>{{data.floor}}</td>
+                <td>{{data.room}}</td>
+                <td>{{data.product}}</td>
+                <td>{{data.status}}</td>
+            </tr>                
+        {% endfor %}              
+                
+    </table>
 
 
 {% endblock %}

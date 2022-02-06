@@ -6,7 +6,7 @@ class Data(models.Model):
     floor = models.CharField(max_length=64)
     room = models.IntegerField()
     product = models.CharField(max_length=64)
-    status = models.BooleanField()
+    status = models.CharField(max_length=3)
 
     def __str__(self):
         return f"{self.floor} {self.room} {self.product} {self.status}"
