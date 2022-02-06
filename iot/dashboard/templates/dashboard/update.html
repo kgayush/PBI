@@ -1,0 +1,24 @@
+{% extends "dashboard/layout.html" %}
+
+{% block body %}
+    <div class="topnav">
+        <h1>Smart Home Dashboard</h1>
+    </div>
+    <div>
+        <a href="{% url 'logout' %}">Log out</a>
+        <a href="{% url 'update' %}" class="active">Admin</a>
+        <a href="{% url 'index' %}">Home</a>
+    </div>
+    <br>
+
+    <div class="heading">
+        <h2>Add Data</h2>
+    </div>
+
+    <form class="update" method="post">
+        {% csrf_token %}     
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+
+{% endblock %}

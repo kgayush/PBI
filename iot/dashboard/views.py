@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from .models import Data
+from .forms import MyForm
 
 # Create your views here.
 
@@ -32,4 +33,18 @@ def logout_view(request):
     return render(request, "dashboard/login.html", {
         "message": "Logged out."
     })
+
+def update(request):
+    if request.method == "POST":
+        form = MyForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse("index"))
+    else:
+        form = MyForm()
+    return render(request, "dashboard/update.html", {
+        "form": form
+    })
+
+
 

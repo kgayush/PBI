@@ -4,7 +4,7 @@ from django.db import models
 
 class Data(models.Model):
     floor = models.CharField(max_length=64)
-    room = models.IntegerField()
+    room = models.CharField(max_length=3)
     product = models.CharField(max_length=64)
     status = models.CharField(max_length=3)
 
